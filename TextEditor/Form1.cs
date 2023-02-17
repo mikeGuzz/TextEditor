@@ -422,15 +422,15 @@ namespace TextEditor
         {
             bool value = !string.IsNullOrEmpty(textBox.SelectedText);
 
-            textBoxContextMenuStrip.Items[0].Enabled = textBox.CanUndo;// undo
-            textBoxContextMenuStrip.Items[1].Enabled = textBox.CanRedo;// redo
-            textBoxContextMenuStrip.Items[3].Enabled = value;// cut
-            textBoxContextMenuStrip.Items[4].Enabled = value;// copy
-            textBoxContextMenuStrip.Items[5].Enabled = Clipboard.ContainsText();// paste
-            textBoxContextMenuStrip.Items[7].Enabled = !string.IsNullOrEmpty(textBox.Text);// select all
-            textBoxContextMenuStrip.Items[9].Enabled = value;// transformations
-            textBoxContextMenuStrip.Items[10].Enabled = value;// style
-            textBoxContextMenuStrip.Items[12].Enabled = value;// search
+            undoToolStripMenuItem1.Enabled = textBox.CanUndo;
+            redoToolStripMenuItem1.Enabled = textBox.CanRedo;
+            cutToolStripMenuItem1.Enabled = value;
+            copyToolStripMenuItem1.Enabled = value;
+            pasteToolStripMenuItem1.Enabled = Clipboard.ContainsText();
+            selectAllToolStripMenuItem.Enabled = !string.IsNullOrEmpty(textBox.Text);
+            transformationsToolStripMenuItem1.Enabled = value;
+            styleToolStripMenuItem1.Enabled = value;
+            searchToolStripMenuItem.Enabled = value;
         }
 
         private void UpdateTitle()
